@@ -2,7 +2,7 @@
 
        <head>
               <title>
-                  TEST DE LOCURA
+                  TEST 2.0 : five questions vs madness
               </title>
        </head>
        
@@ -11,20 +11,56 @@
           <p th:text="${mensaje}"></p>
           <h3>calculadora </h3>
 
-          <form action="/calculadora" method="POST">
+          <form action="/test" method="POST">
 
              
-               Operando 1: <input type="text" name="numero1">
-               Operador: <select name="operacion">
-                           <option value=+>+</option>
-                           <option value=->-</option>
-                           <option value=*>*</option>
-                           <option value=/>/</option>
-                           <option value=^>^</option>
-                           <option>raiz</option>
-                           </select> 
-               Operando 2: <input type="text" name="numero2"> 
+              <li>1.¿con que frecuencia te dicen estas loco?
+                     <ul>
+                     <li><input type="radio" name="opcion1" value="0" /> nunca</li>
+                     <li><input type="radio" name="opcion2" value="1" /> de vez encuando</li>
+                     <li><input type="radio" name="opcion3" value="2" /> son las tres menos cuarto</li>
+                     </ul>
+                   </li>
                <input type="submit"/>
+               
+               <li>2.¿cuantas veces has acabado desnudo en una fiesta?
+                     <ul>
+                     <li><input type="radio" name="opcion1" value="0" /> nunca</li>
+                     <li><input type="radio" name="opcion2" value="1" /> de vez encuando</li>
+                     <li><input type="radio" name="opcion3" value="2" /> son las tres menos cuarto</li>
+                     </ul>
+                   </li>
+               <input type="submit"/>
+
+               <li>3.¿cuantas veces le has quitado el sitio a una ancianita en el autobus?
+                     <ul>
+                     <li><input type="radio" name="opcion1" value="0" /> nunca</li>
+                     <li><input type="radio" name="opcion2" value="1" /> de vez encuando</li>
+                     <li><input type="radio" name="opcion3" value="2" /> son las tres menos cuarto</li>
+                     </ul>
+                   </li>
+               <input type="submit"/>
+
+
+               <li>4.¿cuando un compañero te ha pedido ayuda le has contestado jurando y maldiciendo en arameo (valido otro idioma)?
+                     <ul>
+                     <li><input type="radio" name="opcion1" value="0" /> nunca</li>
+                     <li><input type="radio" name="opcion2" value="1" /> de vez encuando</li>
+                     <li><input type="radio" name="opcion3" value="2" /> son las tres menos cuarto</li>
+                     </ul>
+                   </li>
+               <input type="submit"/>
+
+
+               <li>5.¿cuandote dicen que hay examen del curso de programacion , te pones mas nervioso que espinete vendiendo condones?
+                     <ul>
+                     <li><input type="radio" name="opcion1" value="0" /> nunca</li>
+                     <li><input type="radio" name="opcion2" value="1" /> de vez encuando</li>
+                     <li><input type="radio" name="opcion3" value="2" /> son las tres menos cuarto</li>
+                     </ul>
+                   </li>
+               <input type="submit"/>
+
 
           </form>
 
