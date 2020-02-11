@@ -36,6 +36,80 @@ public class MainController {
         return respuesta;
 
     }
+   
+    @GetMapping("/test")
+    @ResponseBody
+    public String testdelocura(@RequestParam("opcion1") String opcion1, @RequestParam("opcion2") String opcion2,
+            @RequestParam("opcion3") String opcion3, @RequestParam("opcion4") String respuesta4) {
+         String respuesta; 
+         int suma=0;  
+         String respuesta1= "nunca";
+         String respuesta2= "una vez al año";
+         String respuesta3= "a menudo ";
+         String repuesta4= "son las tres menos cuarto";       
+        System.out.println("¿con que frecuencia te dicen estas loco?"); 
+           if (respuesta.equals(respuesta1)){
+               suma = 0;
+           }else if (respuesta.equals(respuesta2)){
+               suma = 1;
+           }else if (respuesta.equals(respuesta3)){
+               suma = 2;
+           }else if (respuesta.equals(respuesta4)){
+               suma = 3;
+           }
+
+         
+
+                  
+             
+
+
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     @GetMapping("/calculadora") 
     @ResponseBody
