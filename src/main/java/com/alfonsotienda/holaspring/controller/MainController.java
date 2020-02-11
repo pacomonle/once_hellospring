@@ -40,13 +40,13 @@ public class MainController {
     @GetMapping("/calculadora")
     @ResponseBody
 
-    public String calculadora(@RequestParam("numero1") Double num1, @RequestParam("numero2") Double num2,
+    public String calculadora(@RequestParam("numero1") Double num1, @RequestParam(value ="numero2", required = false) Double num2,
             @RequestParam("operador") String operacion) {
 
         double res = 0;
 
         if (operacion.equals("+") || operacion.equals("-") || operacion.equals("x") || operacion.equals("X")
-                || operacion.equals("/") || operacion.equals("*")) {
+                || operacion.equals("/") || operacion.equals("*") || operacion.equals("^") || operacion.equals("raiz cuadrada") || operacion.equals("potencia")|| operacion.equals("raiz") ) {
 
         } else {
             return "que noooooooo";
@@ -67,7 +67,14 @@ public class MainController {
         case "/":
             res = num1 / num2;
             break;
-
+         case "^":
+         case "potencia": 
+            res = (int) Math.pow (num1, num2);     
+            break;
+          case "raiz":
+          case "raiz cuadrada":
+             res = Math.sqrt (num1);
+            break;      
         }
 
         return "el resultado de " + num1 + " " + operacion + " " + num2 + " es " + res;
