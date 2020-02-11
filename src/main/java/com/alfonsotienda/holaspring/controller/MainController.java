@@ -41,23 +41,30 @@ public class MainController {
     @ResponseBody
     public String testdelocura(@RequestParam("opcion1") String opcion1, @RequestParam("opcion2") String opcion2,
             @RequestParam("opcion3") String opcion3, @RequestParam("opcion4") String respuesta4) {
-         String respuesta; 
-         int suma=0;  
+         String test1, test2, test3, test4, test5, test6, test7, test8; 
+         int suma1, suma2, suma3, suma4, suma5, suma6, suma7, suma8 =0;  
          String respuesta1= "nunca";
          String respuesta2= "una vez al año";
          String respuesta3= "a menudo ";
-         String repuesta4= "son las tres menos cuarto";       
-        System.out.println("¿con que frecuencia te dicen estas loco?"); 
-           if (respuesta.equals(respuesta1)){
-               suma = 0;
-           }else if (respuesta.equals(respuesta2)){
-               suma = 1;
-           }else if (respuesta.equals(respuesta3)){
-               suma = 2;
-           }else if (respuesta.equals(respuesta4)){
-               suma = 3;
-           }
+         String repuesta4= "son las tres menos cuarto";  
+       
+         System.out.println("respuesta1= nunca " + "respuesta2= una vez al año " +
+                            "respuesta3= a menudo " + "respuesta4= son las tres menos cuarto " );
+         
 
+        System.out.println("¿con que frecuencia te dicen estas loco?"); 
+        
+           if (test1.equals(respuesta1)){
+               suma1 = 0;
+           }else if (test1.equals(respuesta2)){
+               suma1 = 1;
+           }else if (test1.equals(respuesta3)){
+               suma1 = 2;
+           }else if (test1.equals(respuesta4)){
+               suma1 = 3;
+           }
+         
+           
          
 
                   
