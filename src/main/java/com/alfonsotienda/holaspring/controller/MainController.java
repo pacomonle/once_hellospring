@@ -3,10 +3,10 @@ package com.alfonsotienda.holaspring.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
-import java.util.Scanner; // Importación de la clase Scanner.
 
 /**
  * MainController
@@ -37,47 +37,71 @@ public class MainController {
 
     }
 
-    @GetMapping("/calculadora")
+    @GetMapping("/calculadora") 
+    @ResponseBody
+    public ModelAndView calculadoraHTML() {
+        ModelAndView modelAndView = new ModelAndView("hello"); 
+        modelAndView.addObject("mensaje", "");
+        return modelAndView;
+    }
+    
+    
+    @PostMapping("/calculadora") 
     @ResponseBody
 
-    public String calculadora(@RequestParam("numero1") Double num1, @RequestParam(value ="numero2", required = false) Double num2,
-            @RequestParam("operador") String operacion) {
+    public ModelAndView calculadoraHTMLPost(@RequestParam("numero1") Double numero1, @RequestParam(value ="numero2", required = false) Double numero2,
+            @RequestParam("operacion") String operacion) {
+      
+      ModelAndView modelAndView = new ModelAndView("hello");
 
-        double res = 0;
+      String resultado = calcula(numero1, numero2, operacion);
 
-        if (operacion.equals("+") || operacion.equals("-") || operacion.equals("x") || operacion.equals("X")
-                || operacion.equals("/") || operacion.equals("*") || operacion.equals("^") || operacion.equals("raiz cuadrada") || operacion.equals("potencia")|| operacion.equals("raiz") ) {
+      modelAndView.addObject("mensaje", resultado);
+                 
+       return modelAndView;
 
-        } else {
-            return "que noooooooo";
-        }
+}
 
-        switch (operacion) {
-        case "+":
-            res = num1 + num2;
-            break;
-        case "-":
-            res = num1 - num2;
-            break;
-        case "x":
-        case "X":
-        case "*":
-            res = num1 * num2;
-            break;
-        case "/":
-            res = num1 / num2;
-            break;
-         case "^":
-         case "potencia": 
-            res = (int) Math.pow (num1, num2);     
-            break;
-          case "raiz":
-          case "raiz cuadrada":
-             res = Math.sqrt (num1);
-            break;      
-        }
 
-        return "el resultado de " + num1 + " " + operacion + " " + num2 + " es " + res;
+private String calcula(
+    Double numero1,
+    Double numero2,
+    String operacion
+) {
+    double res = 0;
+
+    if (operacion.equals("+") || operacion.equals("-") || operacion.equals("x") || operacion.equals("X")
+            || operacion.equals("/") || operacion.equals("*") || operacion.equals("^") || operacion.equals("raiz cuadrada") || operacion.equals("potencia")|| operacion.equals("raiz") ) {
+
+    } else {
+        return "que noooooooo";
     }
 
+    switch (operacion) {
+    case "+":
+        res = numero1 + numero2;
+        break;
+    case "-":
+        res = numero1 - numero2;
+        break;
+    case "x":
+    case "X":
+    case "*":
+        res = numero1 * numero2;
+        break;
+    case "/":
+        res = numero1 / numero2;
+        break;
+     case "^":
+     case "potencia": 
+        res = (int) Math.pow (numero1, numero2);     
+        break;
+      case "raiz":
+      case "raiz cuadrada":
+         res = Math.sqrt (numero1);
+        break;      
+    }
+
+    return "el resultado de " + numero1 + " " + operacion + " " + numero2 + " es " + res;
+}
 }

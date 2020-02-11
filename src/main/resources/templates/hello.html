@@ -2,15 +2,33 @@
 
        <head>
               <title>
-                  Hola Mundo
+                  calculadora
               </title>
        </head>
        
        
        <body>
-
-          <h3>Mi pagina </h3>
           <p th:text="${mensaje}"></p>
+          <h3>calculadora </h3>
+
+          <form action="/calculadora" method="POST">
+
+             
+               Operando 1: <input type="text" name="numero1">
+               Operador: <select name="operacion">
+                           <option value=+>+</option>
+                           <option value=->-</option>
+                           <option value=*>*</option>
+                           <option value=/>/</option>
+                           <option value=^>^</option>
+                           <option>raiz</option>
+                           </select> 
+               Operando 2: <input type="text" name="numero2"> 
+               <input type="submit"/>
+
+          </form>
+
+          
        </body>
 </html>          
 
