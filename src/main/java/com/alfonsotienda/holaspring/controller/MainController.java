@@ -55,7 +55,7 @@ public class MainController {
       
       ModelAndView modelAndView = new ModelAndView("test");
 
-      String resultado = calcula1(respuesta1, respuesta2, respuesta3,
+      String resultado = resultados(respuesta1, respuesta2, respuesta3,
                                 respuesta4, respuesta5);
 
       modelAndView.addObject("mensaje", resultado);
@@ -65,10 +65,19 @@ public class MainController {
     }
     
     
-private String calcula1(
-    String respuesta1, respuesta2, respuesta3, respuesta4, respuesta5;
+private String resultados
+(
+    String respuesta1, 
+    String respuesta2, 
+    String respuesta3, 
+    String respuesta4, 
+    String respuesta5
     ) {
-    int suma1, suma2, suma3, suma4, suma5 = 0;
+    int suma1 =0;
+    int suma2 =0;
+    int suma3 =0;
+    int suma4 =0; 
+    int suma5 =0;
 // pregunta 1
            if (respuesta1.equals("0")){
              suma1 = 0;
@@ -116,22 +125,28 @@ private String calcula1(
          int suma;
          suma = suma1 + suma2 + suma3 + suma4 + suma5;
          
-         System.out.println("RESULTADOS TEST 2.0 ULTIMA GENRACION - SUPER FIVE QUESTIONS?");
-
-         System.out.println();
-
-         System.out.println("\nHas obtenido " + suma + " puntos.");
-         
-         System.out.println();
-     
- // cerramos la funcion con el return de los resulatdos obtenidos segun nuestra clasificacion
-         if (suma>=o and suma<4){
-            return "estas al principio de la escala, completamente cuerdo pero MUY ABURRIDO";
-        }else if (suma>=4 and suma<9){
-            return "estas en la parte media de la escala, vas en CAMINO HACIA LA LOCURA, BIEN!!!";
-        }else if (suma=9 or suma=10){
-            return "enhorabuena ERES DIOS, eres el nuevo NORMAN BATES!!!";
-            }
+        
+// cerramos la funcion con el return de los resulatdos obtenidos segun nuestra clasificacion
+          
+       
+        if (suma==0 && suma<4){
+            return "RESULTADOS TEST 2.0 ULTIMA GENRACION - SUPER FIVE QUESTIONS?" + "\n" +
+             " Has obtenido " + suma + " puntos" + "\n" + 
+             "estas al principio de la escala, completamente cuerdo pero MUY ABURRIDO";
+            
+        }else if (suma>=4 && suma<9){
+            return "RESULTADOS TEST 2.0 ULTIMA GENRACION - SUPER FIVE QUESTIONS?" + "\n" +
+             " Has obtenido " + suma + " puntos" + "\n" + 
+             "estas en la parte media de la escala, vas en CAMINO HACIA LA LOCURA, BIEN!!!";
+            
+        }else{
+            return "RESULTADOS TEST 2.0 ULTIMA GENRACION - SUPER FIVE QUESTIONS?" + "\n" +
+             " Has obtenido " + suma + " puntos" + "\n" + 
+             "enhorabuena ERES DIOS, eres el nuevo NORMAN BATES!!!";
+            
+        }
+           
+    
 
     } 
 
